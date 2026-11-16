@@ -1,68 +1,68 @@
-Gaia ID,RA (deg),Dec (deg),Spectral type,G magnitude (mag),BP-RP (mag),Parallax (mas),Distance (pc),SALT (Dec 2026-Feb 2027),Keck (Dec 2026-Feb 2027),APF (Dec 2026-Feb 2027),SOAR (Dec 2026-Feb 2027),McDonald (source flag),Goodman exposure list,2026B target list,Source files
-77413727493690112,31.59246512,14.1022739,Not provided,,,15.0414,66.48317311,Not favorable,Favorable,Favorable,Favorable,Not provided,Not listed,No,source_info
-202225756293950464,76.50794364,42.99810419,Not provided,13.187337,1.617077,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,No,PriorityRankings
-210639631583112576,84.02495025,47.49558617,Not provided,12.917564,1.433399,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,No,PriorityRankings
-262611347205417344,79.42536154,51.87612715,Not provided,13.072367,1.530392,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,No,PriorityRankings
-272197817292571264,65.81527316,52.40029148,Not provided,13.468663,2.17168,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,No,PriorityRankings
-437368717459759872,41.503286,47.43605,Not provided,12.4,0.849384,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Listed,No,Goodman exposure list; McDonald candidates; PriorityRankings
-513638716642372352,36.404583333333335,62.087361111111115,Not provided,13.117,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,Yes,2026B target list
-677442515834924416,124.1997931,23.12520033,Not provided,12.651052,0.685098,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,No,McDonald candidates; PriorityRankings
-933168609554147584,119.3438489,48.1218512,Not provided,12.199805,1.311101,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,No,PriorityRankings
-1098953217604714112,106.86470833333333,60.943861111111104,Not provided,12.83,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,Yes,2026B target list
-1183864824124929792,,,Not provided,13.51,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,No,Goodman exposure list
-1258006130136446336,208.2307898,24.6857913,Not provided,,,7.5698,132.1038865,Not favorable,Favorable,Favorable,Favorable,Not provided,Not listed,No,source_info
-1445952348525801344,199.1575062,23.01021052,Not provided,11.865063,0.658891,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,No,McDonald candidates; PriorityRankings
-1641872577428643456,239.62345833333336,64.7448888888889,Not provided,12.85,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,Yes,2026B target list
-1694181735744784768,229.3014783,69.70322653,Not provided,12.117462,0.74935,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,No,McDonald candidates; PriorityRankings
-1824489875274815104,295.407165,19.045585,Not provided,12.81,1.159057,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,No,McDonald candidates; PriorityRankings
-1866048945211404288,313.7916656,33.08857988,Not provided,12.442272,1.232449,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,No,Goodman exposure list; PriorityRankings
-1887225092474793088,340.5535188,28.46568847,Not provided,12.546953,1.35946,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,No,Goodman exposure list; PriorityRankings
-1909404578470457216,337.261697,40.528293,Not provided,12.55,0.851232,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,No,McDonald candidates; PriorityRankings
-1918162703981316736,349.985375,40.327444444444446,Not provided,12.95,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,Yes,2026B target list
-1934355039925007360,343.7215026,42.66464094,Not provided,11.989427,1.741649,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,No,PriorityRankings
-1959774438791942528,331.080125,41.192361111111104,Not provided,12.88,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,Yes,2026B target list
-1960011422208148224,329.355794,41.92322198,Not provided,13.150137,1.493754,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,No,PriorityRankings
-1976591061130299648,330.9261662,48.70514938,Not provided,13.0804205,1.393507,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,No,PriorityRankings
-2112454036471050240,273.3203527,40.55459913,Not provided,12.321286,1.437023,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,No,PriorityRankings
-2163305345451290240,313.599198,45.56399,Not provided,11.72,0.851793,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,No,McDonald candidates; PriorityRankings
-2236545296739785984,301.5335,59.70997222222223,Not provided,12.743,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,Yes,2026B target list
-2256759405698587136,277.085894,65.613558,Not provided,12.55,0.83697,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,No,McDonald candidates; PriorityRankings
-2474847090389656064,16.93659541,-8.726801045,Not provided,12.779814,0.715597,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Listed,No,Goodman exposure list; McDonald candidates; PriorityRankings
-2490351540074716672,36.57582433,-3.494972141,Not provided,,,4.8749,205.132413,Favorable,Favorable,Favorable,Favorable,Not provided,Not listed,No,source_info
-2694726424984074496,324.63958333333335,2.779611111111111,Not provided,12.988,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,Yes,2026B target list
-2835800093315146496,345.0529578,21.94203071,Not provided,12.897886,0.8379,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,No,McDonald candidates; PriorityRankings
-2935287508877300992,,,Not provided,12.64,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,No,Goodman exposure list
-3007091223101699328,95.72155676,-7.167212226,Not provided,,,7.1667,139.5342347,Favorable,Favorable,Favorable,Favorable,Not provided,Not listed,No,source_info
-3040280252166234368,,,Not provided,12.76,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,No,Goodman exposure list
-3190523740098447744,,,Not provided,12.25,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,No,Goodman exposure list
-3208256526192267904,78.62794961,-7.062682521,Not provided,,,2.3203,430.9787527,Favorable,Favorable,Favorable,Favorable,Not provided,Not listed,No,source_info
-3215046942503117952,79.04708333333333,-1.985861111111111,Not provided,12.829,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,Yes,2026B target list
-3252546886080448384,62.25911103,-2.207520194,Not provided,12.0726,0.806,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Listed,No,Goodman exposure list; McDonald candidates; PriorityRankings
-3329059422060781184,93.703092,9.574353,Not provided,12.42,0.624164,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Listed,No,Goodman exposure list; McDonald candidates; PriorityRankings
-4203459792338061312,282.836068,-9.081293,Not provided,12.52,1.112279,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Listed,No,Goodman exposure list; McDonald candidates; PriorityRankings
-4318465066420528000,294.8279648,14.93166972,Not provided,11.231088,1.2157,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Listed,No,Goodman exposure list; McDonald candidates; PriorityRankings
-4388128680001229440,257.06,2.87,Not provided,,,3.345,298.9536622,Favorable,Favorable,Favorable,Favorable,Not provided,Not listed,No,source_info
-4449971364341398272,,,Not provided,13.97,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,No,Goodman exposure list
-4480417902167849728,277.2695498,10.01469481,Not provided,12.033865,1.161277,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,No,McDonald candidates; PriorityRankings
-4521928421789735936,274.82554166666665,15.612083333333333,Not provided,13.04,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,Yes,2026B target list
-4528862938544013184,275.293136,21.152633,Not provided,11.37,0.879726,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,No,McDonald candidates; PriorityRankings
-4565020034823300992,254.6345545,21.40276471,Not provided,,,3.0219,330.9176346,Not favorable,Favorable,Favorable,Favorable,Not provided,Not listed,No,source_info
-4576265255645372416,271.885931,21.26797739,Not provided,12.301753,1.031424,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,No,PriorityRankings
-5000838062927554176,,,Not provided,13.1,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,No,Goodman exposure list
-5044327218140737536,,,Not provided,14.48,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,No,Goodman exposure list
-5186664770791126912,47.39779203,-2.29060463,Not provided,12.933552,0.762905,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,No,McDonald candidates; PriorityRankings
-5241421996088027392,,,Not provided,10.58,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,No,Goodman exposure list
-5288571906503118592,,,Not provided,13.3,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,No,Goodman exposure list
-5319442653961927936,,,Not provided,12.79,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,No,Goodman exposure list
-5352619897633005440,162.2690393,-56.61093187,Not provided,12.37385,1.952458,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,No,PriorityRankings
-5397506295901865728,168.6185047,-36.40421198,Not provided,12.211526,1.261554,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,No,PriorityRankings
-5566075580354416896,107.9946033,-37.23771397,Not provided,12.133586,1.667595,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,No,PriorityRankings
-5786698704503419904,,,Not provided,12.41,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,No,Goodman exposure list
-6099072607957373056,,,Not provided,13.04,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,No,Goodman exposure list
-6172302281382170624,211.051646,-31.7680671,Not provided,9.827813,1.624642,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,No,PriorityRankings
-6196341900531496832,,,Not provided,12.74,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,No,Goodman exposure list
-6393888749512565760,,,Not provided,13.9,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,No,Goodman exposure list
-6646169837081308032,,,Not provided,14.57,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,No,Goodman exposure list
-6657756868572776832,,,Not provided,9.64,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,No,Goodman exposure list
-6714154840051650560,,,Not provided,14.69,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,No,Goodman exposure list
-6903293654893289856,310.1200231,-9.312328556,Not provided,12.021009,0.7254,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,No,McDonald candidates; PriorityRankings
+Gaia ID,RA (deg),Dec (deg),Spectral type,Priority rank,Delta RV (km/s),G magnitude (mag),BP-RP (mag),V magnitude (mag),B-V (mag),Parallax (mas),Distance (pc),SALT (Dec 2026-Feb 2027),Keck (Dec 2026-Feb 2027),APF (Dec 2026-Feb 2027),SOAR (Dec 2026-Feb 2027),McDonald (source flag),Goodman exposure list,Goodman 1200 l/mm total (min),Goodman 2100 l/mm total (min),Goodman recommended strategy,2026B target list,Source files
+77413727493690112,31.59246512,14.1022739,Not provided,,,,,,,15.0414,66.48317311,Not favorable,Favorable,Favorable,Favorable,Not provided,Not listed,,,,No,source_info
+202225756293950464,76.50794364,42.99810419,Not provided,10,,13.187337,1.617077,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,No,PriorityRankings
+210639631583112576,84.02495025,47.49558617,Not provided,8,,12.917564,1.433399,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,No,PriorityRankings
+262611347205417344,79.42536154,51.87612715,Not provided,4,,13.072367,1.530392,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,No,PriorityRankings
+272197817292571264,65.81527316,52.40029148,Not provided,11,,13.468663,2.17168,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,No,PriorityRankings
+437368717459759872,41.503286,47.43605,Not provided,28,63.6,12.4,0.849384,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Listed,7.43,13.03333333,Single exposure.,No,Goodman exposure list; McDonald candidates; PriorityRankings
+513638716642372352,36.404583333333335,62.087361111111115,Not provided,,,,,13.117,0.6,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,Yes,2026B target list
+677442515834924416,124.1997931,23.12520033,Not provided,25,17.0,12.651052,0.685098,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,,,,No,McDonald candidates; PriorityRankings
+933168609554147584,119.3438489,48.1218512,Not provided,33,,12.199805,1.311101,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,No,PriorityRankings
+1098953217604714112,106.86470833333333,60.943861111111104,Not provided,,,,,12.83,0.6,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,Yes,2026B target list
+1183864824124929792,,,Not provided,,,13.51,,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,20.63,36.06666667,Single exposure (~18 min).,No,Goodman exposure list
+1258006130136446336,208.2307898,24.6857913,Not provided,,,,,,,7.5698,132.1038865,Not favorable,Favorable,Favorable,Favorable,Not provided,Not listed,,,,No,source_info
+1445952348525801344,199.1575062,23.01021052,Not provided,24,13.0,11.865063,0.658891,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,,,,No,McDonald candidates; PriorityRankings
+1641872577428643456,239.62345833333336,64.7448888888889,Not provided,,,,,12.85,0.6,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,Yes,2026B target list
+1694181735744784768,229.3014783,69.70322653,Not provided,30,14.0,12.117462,0.74935,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,,,,No,McDonald candidates; PriorityRankings
+1824489875274815104,295.407165,19.045585,Not provided,21,90.84,12.81,1.159057,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,,,,No,McDonald candidates; PriorityRankings
+1866048945211404288,313.7916656,33.08857988,Not provided,2,,12.442272,1.232449,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,3.87,6.766666667,Single exposure.,No,Goodman exposure list; PriorityRankings
+1887225092474793088,340.5535188,28.46568847,Not provided,1,,12.546953,1.35946,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,4.27,7.45,Single exposure.,No,Goodman exposure list; PriorityRankings
+1909404578470457216,337.261697,40.528293,Not provided,26,73.7,12.55,0.851232,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,,,,No,McDonald candidates; PriorityRankings
+1918162703981316736,349.985375,40.327444444444446,Not provided,,,,,12.95,0.6,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,Yes,2026B target list
+1934355039925007360,343.7215026,42.66464094,Not provided,34,,11.989427,1.741649,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,No,PriorityRankings
+1959774438791942528,331.080125,41.192361111111104,Not provided,,,,,12.88,0.6,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,Yes,2026B target list
+1960011422208148224,329.355794,41.92322198,Not provided,6,,13.150137,1.493754,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,No,PriorityRankings
+1976591061130299648,330.9261662,48.70514938,Not provided,5,,13.0804205,1.393507,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,No,PriorityRankings
+2112454036471050240,273.3203527,40.55459913,Not provided,9,,12.321286,1.437023,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,No,PriorityRankings
+2163305345451290240,313.599198,45.56399,Not provided,27,36.4,11.72,0.851793,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,,,,No,McDonald candidates; PriorityRankings
+2236545296739785984,301.5335,59.70997222222223,Not provided,,,,,12.743,0.6,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,Yes,2026B target list
+2256759405698587136,277.085894,65.613558,Not provided,29,61.3,12.55,0.83697,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,,,,No,McDonald candidates; PriorityRankings
+2474847090389656064,16.93659541,-8.726801045,Not provided,15,17.0,12.779814,0.715597,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Listed,10.57,18.46666667,Single exposure.,No,Goodman exposure list; McDonald candidates; PriorityRankings
+2490351540074716672,36.57582433,-3.494972141,Not provided,,,,,,,4.8749,205.132413,Favorable,Favorable,Favorable,Favorable,Not provided,Not listed,,,,No,source_info
+2694726424984074496,324.63958333333335,2.779611111111111,Not provided,,,,,12.988,0.6,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,Yes,2026B target list
+2835800093315146496,345.0529578,21.94203071,Not provided,23,12.0,12.897886,0.8379,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,,,,No,McDonald candidates; PriorityRankings
+2935287508877300992,,,Not provided,,,12.64,,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,4.63,8.116666667,Single exposure.,No,Goodman exposure list
+3007091223101699328,95.72155676,-7.167212226,Not provided,,,,,,,7.1667,139.5342347,Favorable,Favorable,Favorable,Favorable,Not provided,Not listed,,,,No,source_info
+3040280252166234368,,,Not provided,,,12.76,,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,5.2,9.116666667,Single exposure.,No,Goodman exposure list
+3190523740098447744,,,Not provided,,,12.25,,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,6.47,11.33333333,Single exposure.,No,Goodman exposure list
+3208256526192267904,78.62794961,-7.062682521,Not provided,,,,,,,2.3203,430.9787527,Favorable,Favorable,Favorable,Favorable,Not provided,Not listed,,,,No,source_info
+3215046942503117952,79.04708333333333,-1.985861111111111,Not provided,,,,,12.829,0.6,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,Yes,2026B target list
+3252546886080448384,62.25911103,-2.207520194,Not provided,17,18.0,12.0726,0.806,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Listed,5.5,9.6,Single exposure.,No,Goodman exposure list; McDonald candidates; PriorityRankings
+3329059422060781184,93.703092,9.574353,Not provided,18,63.2,12.42,0.624164,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Listed,7.57,13.26666667,Single exposure.,No,Goodman exposure list; McDonald candidates; PriorityRankings
+4203459792338061312,282.836068,-9.081293,Not provided,14,36.05,12.52,1.112279,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Listed,8.3,14.53333333,Single exposure.,No,Goodman exposure list; McDonald candidates; PriorityRankings
+4318465066420528000,294.8279648,14.93166972,Not provided,20,25.0,11.231088,1.2157,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Listed,2.53,4.433333333,Single exposure.,No,Goodman exposure list; McDonald candidates; PriorityRankings
+4388128680001229440,257.06,2.87,Not provided,,,,,,,3.345,298.9536622,Favorable,Favorable,Favorable,Favorable,Not provided,Not listed,,,,No,source_info
+4449971364341398272,,,Not provided,,,13.97,,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,31.53,55.16666667,2100 mode: Split into 2x 828s / 1200 mode: Single exposure.,No,Goodman exposure list
+4480417902167849728,277.2695498,10.01469481,Not provided,19,11.0,12.033865,1.161277,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,,,,No,McDonald candidates; PriorityRankings
+4521928421789735936,274.82554166666665,15.612083333333333,Not provided,,,,,13.04,0.6,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,Yes,2026B target list
+4528862938544013184,275.293136,21.152633,Not provided,22,124.47,11.37,0.879726,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,,,,No,McDonald candidates; PriorityRankings
+4565020034823300992,254.6345545,21.40276471,Not provided,,,,,,,3.0219,330.9176346,Not favorable,Favorable,Favorable,Favorable,Not provided,Not listed,,,,No,source_info
+4576265255645372416,271.885931,21.26797739,Not provided,3,,12.301753,1.031424,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,No,PriorityRankings
+5000838062927554176,,,Not provided,,,13.1,,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,14.17,24.8,Single exposure.,No,Goodman exposure list
+5044327218140737536,,,Not provided,,,14.48,,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,50.67,88.63333333,2100 mode: Split into 3x 886s / 1200 mode: Split into 2x 760s.,No,Goodman exposure list
+5186664770791126912,47.39779203,-2.29060463,Not provided,16,11.0,12.933552,0.762905,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,,,,No,McDonald candidates; PriorityRankings
+5241421996088027392,,,Not provided,,,10.58,,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,1.4,2.433333333,Single brief exposure.,No,Goodman exposure list
+5288571906503118592,,,Not provided,,,13.3,,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,17.03,29.83333333,Single exposure.,No,Goodman exposure list
+5319442653961927936,,,Not provided,,,12.79,,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,5.33,9.333333333,Single exposure.,No,Goodman exposure list
+5352619897633005440,162.2690393,-56.61093187,Not provided,7,,12.37385,1.952458,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,No,PriorityRankings
+5397506295901865728,168.6185047,-36.40421198,Not provided,32,,12.211526,1.261554,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,No,PriorityRankings
+5566075580354416896,107.9946033,-37.23771397,Not provided,31,,12.133586,1.667595,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,No,PriorityRankings
+5786698704503419904,,,Not provided,,,12.41,,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,7.5,13.13333333,Single exposure.,No,Goodman exposure list
+6099072607957373056,,,Not provided,,,13.04,,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,13.43,23.46666667,Single exposure.,No,Goodman exposure list
+6172302281382170624,211.051646,-31.7680671,Not provided,12,,9.827813,1.624642,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Not listed,,,,No,PriorityRankings
+6196341900531496832,,,Not provided,,,12.74,,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,10.17,17.8,Single exposure.,No,Goodman exposure list
+6393888749512565760,,,Not provided,,,13.9,,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,29.7,51.93333333,2100 mode: Split into 2x 779s / 1200 mode: Single exposure.,No,Goodman exposure list
+6646169837081308032,,,Not provided,,,14.57,,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,54.83,95.96666667,2100 mode: Split into 3x 960s / 1200 mode: Split into 2x 823s.,No,Goodman exposure list
+6657756868572776832,,,Not provided,,,9.64,,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,0.6,1.033333333,Single brief exposure.,No,Goodman exposure list
+6714154840051650560,,,Not provided,,,14.69,,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Not provided,Listed,61.2,107.1,2100 mode: Split into 3x 1071s / 1200 mode: Split into 2x 918s.,No,Goodman exposure list
+6903293654893289856,310.1200231,-9.312328556,Not provided,13,10.0,12.021009,0.7254,,,,,Not assessed,Not assessed,Not assessed,Not assessed,Yes,Not listed,,,,No,McDonald candidates; PriorityRankings

@@ -28,7 +28,7 @@ function renderTable(){
   $('result-count').textContent=`${rows.length} SOURCE${rows.length===1?'':'S'}`;
   $('empty-state').hidden=rows.length>0;
   $('spectral-count').textContent=String(sources.filter(s=>s['Spectral type']&&s['Spectral type']!=='Not provided').length);
-  $('photometry-count').textContent=String(sources.filter(s=>Number.isFinite(Number(s['G magnitude (mag)']))&&Number.isFinite(Number(s['BP-RP (mag)']))).length);
+  $('photometry-count').textContent=String(sources.filter(s=>s['G magnitude (mag)']!==''&&s['BP-RP (mag)']!==''&&Number.isFinite(Number(s['G magnitude (mag)']))&&Number.isFinite(Number(s['BP-RP (mag)']))).length);
   renderCMD();
 }
 function renderVisibility(){
@@ -38,7 +38,7 @@ function renderVisibility(){
 function setupCanvas(canvas){const rect=canvas.getBoundingClientRect(),dpr=window.devicePixelRatio||1;canvas.width=Math.max(1,Math.round(rect.width*dpr));canvas.height=Math.max(1,Math.round(rect.height*dpr));const ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);return{ctx,w:rect.width,h:rect.height};}
 function renderCMD(){
   const canvas=$('cmd-canvas');if(!canvas)return;const{ctx,w,h}=setupCanvas(canvas),pad={l:48,r:20,t:18,b:38};ctx.clearRect(0,0,w,h);ctx.font='9px "DM Mono", monospace';ctx.lineWidth=1;
-  const pts=sources.filter(s=>Number.isFinite(Number(s['BP-RP (mag)']))&&Number.isFinite(Number(s['G magnitude (mag)']))).map(s=>({...s,xval:Number(s['BP-RP (mag)']),yval:Number(s['G magnitude (mag)'])}));
+  const pts=sources.filter(s=>s['BP-RP (mag)']!==''&&s['G magnitude (mag)']!==''&&Number.isFinite(Number(s['BP-RP (mag)']))&&Number.isFinite(Number(s['G magnitude (mag)']))).map(s=>({...s,xval:Number(s['BP-RP (mag)']),yval:Number(s['G magnitude (mag)'])}));
   const innerW=w-pad.l-pad.r,innerH=h-pad.t-pad.b;ctx.strokeStyle='#2a3946';ctx.fillStyle='#7c8c98';
   const xmin=pts.length?Math.min(...pts.map(p=>p.xval)):0,xmax=pts.length?Math.max(...pts.map(p=>p.xval)):1,ymin=pts.length?Math.min(...pts.map(p=>p.yval)):0,ymax=pts.length?Math.max(...pts.map(p=>p.yval)):1;
   for(let i=0;i<=4;i++){const x=pad.l+innerW*i/4,y=pad.t+innerH*i/4;ctx.beginPath();ctx.moveTo(x,pad.t);ctx.lineTo(x,pad.t+innerH);ctx.stroke();ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+innerW,y);ctx.stroke();if(pts.length){ctx.fillText((xmin+(xmax-xmin)*i/4).toFixed(1),x-9,h-15);ctx.fillText((ymin+(ymax-ymin)*i/4).toFixed(1),4,y+3);}}
