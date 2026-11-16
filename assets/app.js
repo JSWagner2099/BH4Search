@@ -21,7 +21,7 @@ function renderTable(){
     if(obs&&!isPotential(s[facilityField[obs]]))return false;
     return true;
   });
-  $('catalog-body').innerHTML=rows.map(s=>`<tr data-id="${s['Gaia ID']}" class="${s['Gaia ID']===selectedId?'selected':''}"><td class="source-cell"><a class="source-link" href="https://gea.esac.esa.int/archive/" target="_blank" rel="noreferrer">${s['Gaia ID']}</a></td><td>${num(s['RA (deg)'],5)}</td><td>${num(s['Dec (deg)'],5)}</td><td>${s['Spectral type estimate']}</td><td>${s['Spectral type basis'].startsWith('GSP')?'GSP-Phot Teff':'BP−RP color'}</td><td>${num(s['Teff GSP-Phot (K)'],0)}</td><td>${num(s['logg GSP-Phot'],2)}</td><td>${num(s['[M/H] GSP-Phot'],2)}</td><td>${num(s['G magnitude (mag)'],3)}</td><td>${num(s['BP-RP observed (mag)'],3)}</td><td>${statusHTML(s['HIRES observability'])}</td><td>${statusHTML(s['APF observability'])}</td><td>${statusHTML(s['ESPRESSO observability'])}</td><td>${statusHTML(s['SOAR observability'])}</td><td>${statusHTML(s["McDonald's HJST observability"])}</td><td>${statusHTML(s['SALT observability'])}</td></tr>`).join('');
+  $('catalog-body').innerHTML=rows.map(s=>`<tr data-id="${s['Gaia ID']}" class="${s['Gaia ID']===selectedId?'selected':''}"><td class="source-cell"><a class="source-link" href="https://gea.esac.esa.int/archive/" target="_blank" rel="noreferrer">${s['Gaia ID']}</a></td><td>${num(s['RA (deg)'],5)}</td><td>${num(s['Dec (deg)'],5)}</td><td class="rv-cell">${s['Gaia RV (km/s)']===''?'—':`${num(s['Gaia RV (km/s)'],3)} ± ${num(s['Gaia RV error (km/s)'],3)}`}</td><td>${s['Spectral type estimate']}</td><td>${s['Spectral type basis'].startsWith('GSP')?'GSP-Phot Teff':'BP−RP color'}</td><td>${num(s['Teff GSP-Phot (K)'],0)}</td><td>${num(s['logg GSP-Phot'],2)}</td><td>${num(s['[M/H] GSP-Phot'],2)}</td><td>${num(s['G magnitude (mag)'],3)}</td><td>${num(s['BP-RP observed (mag)'],3)}</td><td>${statusHTML(s['HIRES observability'])}</td><td>${statusHTML(s['APF observability'])}</td><td>${statusHTML(s['ESPRESSO observability'])}</td><td>${statusHTML(s['SOAR observability'])}</td><td>${statusHTML(s["McDonald's HJST observability"])}</td><td>${statusHTML(s['SALT observability'])}</td></tr>`).join('');
   $('source-count').textContent=String(sources.length).padStart(2,'0');$('type-count').textContent=String(sources.filter(s=>s['Spectral type estimate']&&s['Spectral type estimate']!=='Not estimated').length);$('teff-count').textContent=String(sources.filter(s=>s['Teff GSP-Phot (K)']!=='').length);
   $('result-count').textContent=`${rows.length} SOURCE${rows.length===1?'':'S'}`;$('empty-state').hidden=rows.length>0;renderCMD();
 }
@@ -64,6 +64,19 @@ function renderCMD(){
   if(p['Gaia ID']===selectedId){ctx.beginPath();ctx.arc(p.x,p.y,11,0,Math.PI*2);ctx.strokeStyle='#2b554c';ctx.lineWidth=1.4;ctx.stroke();}
  }
 }
+function activateView(name,writeHistory=false){
+  const view=['catalog','cmd','visibility'].includes(name)?name:'catalog';
+  document.querySelectorAll('[data-view]').forEach(tab=>{const active=tab.dataset.view===view;tab.classList.toggle('nav-active',active);tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;});
+  document.querySelectorAll('.tab-panel').forEach(panel=>{panel.hidden=panel.id!==`view-${view}`;});
+  if(writeHistory&&location.hash!==`#${view}`)history.pushState(null,'',`#${view}`);
+  if(view==='cmd')requestAnimationFrame(renderCMD);
+}
+function viewFromLocation(){const hash=location.hash.slice(1);activateView(hash==='cmd'?'cmd':hash==='visibility'?'visibility':'catalog');}
+document.querySelectorAll('[data-view]').forEach(tab=>{
+  tab.addEventListener('click',e=>{e.preventDefault();activateView(tab.dataset.view,true);window.scrollTo({top:0,behavior:'smooth'});});
+  tab.addEventListener('keydown',e=>{const tabs=[...document.querySelectorAll('[data-view]')],index=tabs.indexOf(tab);let next=null;if(e.key==='ArrowRight')next=(index+1)%tabs.length;else if(e.key==='ArrowLeft')next=(index-1+tabs.length)%tabs.length;else if(e.key==='Home')next=0;else if(e.key==='End')next=tabs.length-1;if(next!==null){e.preventDefault();tabs[next].focus();tabs[next].click();}});
+});
+window.addEventListener('popstate',viewFromLocation);window.addEventListener('hashchange',viewFromLocation);viewFromLocation();
 function loadCatalog(){fetch('data/catalog.csv').then(r=>{if(!r.ok)throw Error('catalog unavailable');return r.text();}).then(t=>{sources=parseCSV(t);renderTable();renderVisibility();}).catch(()=>{$('result-count').textContent='CATALOG UNAVAILABLE';$('empty-state').hidden=false;});}
 for(const id of ['query','teff-min','teff-max','obs-filter'])$(id).addEventListener('input',renderTable);$('obs-filter').addEventListener('change',renderTable);
 $('reset-filters').addEventListener('click',()=>{$('query').value='';$('teff-min').value='';$('teff-max').value='';$('obs-filter').value='';renderTable();});

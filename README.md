@@ -4,7 +4,7 @@ A static, searchable Gaia stellar radial-velocity catalog named DR4 Database for
 
 ## Catalog and type estimates
 
-`data/catalog.csv` is based on the 67-source `Mega_Catalogue - Sheet2.csv`, joined to matching fields from the earlier merged project catalog. The latest spreadsheet IDs and coordinates are authoritative. It retains GSP-Phot `teff`, `logg`, metallicity, distance and extinction parameters, Gaia photometry, previous target-list/exposure metadata where IDs match, and source notes.
+`data/catalog.csv` is based on the 67-source `Mega_Catalogue - Sheet2.csv`, joined to matching fields from the earlier merged project catalog. The latest spreadsheet IDs and coordinates are authoritative. It retains GSP-Phot `teff`, `logg`, metallicity, distance and extinction parameters, Gaia photometry, previous target-list/exposure metadata where IDs match, and source notes. Gaia DR3 `radial_velocity` and `radial_velocity_error` from that source CSV appear together in the catalog as `Gaia RV ± error (km/s)`; one source has no reported Gaia RV in the input data.
 
 For spectral-type estimates, the app uses the nearest dwarf standard in the Mamajek temperature sequence when `teff_gspphot` is present (47 sources). Where it is missing, the nearest Gaia BP−RP dwarf color is used (20 sources); these color-only estimates are marked low confidence because the colors could not be dereddened. The output is a temperature class/subclass only; no luminosity class is inferred. These are estimates, not spectroscopic classifications.
 

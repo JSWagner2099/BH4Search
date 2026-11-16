@@ -15,3 +15,9 @@
 .cmd-section .chart-foot{background:#fff;color:#53677b;border-top:1px solid #d7deea;font-size:9px;letter-spacing:.02em}
 .cmd-section .chart-foot b{color:#53677b}
 @media(max-width:620px){.cmd-section .cmd-stage{height:690px;margin:0;padding:0 2px}.cmd-section .chart-foot{display:block;line-height:1.8}.cmd-section .chart-foot span{display:block}}
+
+/* Click-through sections keep catalog, CMD, and observing sites on separate views. */
+.tab-panel[hidden]{display:none!important}
+.view-tabs a{padding:0 4px;background:transparent;border:0;color:inherit;cursor:pointer;font:inherit}
+.rv-cell{font-family:var(--mono);white-space:nowrap;color:#b9ccd0}
+@media(max-width:620px){.topbar{height:auto;min-height:62px;flex-wrap:wrap;padding:8px 0;gap:0}.topbar nav.view-tabs{display:flex;order:3;width:100%;height:auto;justify-content:space-between;gap:8px;border-top:1px solid var(--line);margin-top:8px;padding-top:6px}.topbar nav.view-tabs a{height:36px;font-size:10px}.topbar nav.view-tabs a:after{bottom:-6px}.github-link{font-size:9px}}
