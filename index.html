@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101a25">
-  <meta name="description" content="A searchable catalog of stellar radial velocity targets, stellar parameters, and observatory visibility.">
+  <meta name="description" content="A searchable catalog of stellar radial-velocity targets and observatory visibility.">
   <title>Stellar RV Atlas</title>
   <link rel="stylesheet" href="assets/site.css">
   <script src="assets/app.js" defer></script>
@@ -12,107 +12,26 @@
 <body>
   <div class="shell">
     <header class="topbar">
-      <a class="brand" href="#top" aria-label="Stellar RV Atlas home">
-        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
-        <span>STELLAR RV <b>ATLAS</b></span>
-      </a>
-      <nav aria-label="Main navigation">
-        <a class="nav-active" href="#catalog">Catalog</a>
-        <a href="#cmd">CMD explorer</a>
-        <a href="#visibility">Observability</a>
-        <a href="#rv-example">RV example</a>
-      </nav>
+      <a class="brand" href="#top" aria-label="Stellar RV Atlas home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>STELLAR RV <b>ATLAS</b></span></a>
+      <nav aria-label="Main navigation"><a class="nav-active" href="#catalog">Catalog</a><a href="#cmd">CMD explorer</a><a href="#visibility">Observability</a></nav>
       <a class="github-link" href="README.md#publish-with-github-pages">GitHub Pages <span aria-hidden="true">↗</span></a>
     </header>
-
     <main id="top">
       <section class="hero">
-        <div class="hero-copy">
-          <div class="eyebrow"><span class="live-dot"></span> RESEARCH CATALOG · GAIA DR3</div>
-          <h1>Stellar RV<br><em>Atlas.</em></h1>
-          <p class="hero-lede">A working index for radial-velocity targets. Search stellar properties, map the sample on a color–magnitude diagram, and find sources visible from your observatory.</p>
-          <div class="hero-actions">
-            <a class="button button-light" href="#catalog">Explore catalog <span>↓</span></a>
-            <label class="button button-outline upload-button" for="catalog-upload">Import a catalog <span>＋</span></label>
-            <input id="catalog-upload" type="file" accept=".csv,text/csv" hidden>
-          </div>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
-          <div class="star-core"></div><span class="star-pip pip-one"></span><span class="star-pip pip-two"></span><span class="star-pip pip-three"></span>
-          <div class="hero-caption"><span>FIELD 01</span><span>J2016.0 · EQUATORIAL</span></div>
-        </div>
-        <div class="hero-foot"><span>DATA IN MOTION</span><span>01 / 04</span></div>
+        <div class="hero-copy"><div class="eyebrow"><span class="live-dot"></span> RESEARCH CATALOG · GAIA DR3</div><h1>Stellar RV<br><em>Atlas.</em></h1><p class="hero-lede">A working index of stellar radial-velocity targets. Search the merged source lists, inspect Gaia photometry, and check the available observatory planning flags.</p><div class="hero-actions"><a class="button button-light" href="#catalog">Explore catalog <span>↓</span></a><a class="button button-outline" href="data/catalog.csv" download>Download catalog <span>↓</span></a></div></div>
+        <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><div class="star-core"></div><span class="star-pip pip-one"></span><span class="star-pip pip-two"></span><span class="star-pip pip-three"></span><div class="hero-caption"><span>FIELD 01</span><span>J2016.0 · EQUATORIAL</span></div></div><div class="hero-foot"><span>CATALOG IN MOTION</span><span>01 / 03</span></div>
       </section>
-
-      <section class="metrics" aria-label="Catalog summary">
-        <article><span class="metric-label">CATALOG SOURCES</span><strong id="source-count">07</strong><span class="metric-note">Gaia DR3 identifiers</span></article>
-        <article><span class="metric-label">RV EPOCHS</span><strong>67</strong><span class="metric-note">synthetic target 3 sample</span></article>
-        <article><span class="metric-label">OBSERVATORIES</span><strong>04</strong><span class="metric-note">SALT · Keck · APF · SOAR</span></article>
-        <article><span class="metric-label">PARAMETER COVERAGE</span><strong id="coverage-count">—</strong><span class="metric-note">temperature + photometry</span></article>
-      </section>
-
+      <section class="metrics" aria-label="Catalog summary"><article><span class="metric-label">CATALOG SOURCES</span><strong id="source-count">—</strong><span class="metric-note">unique Gaia DR3 identifiers</span></article><article><span class="metric-label">SPECTRAL TYPES</span><strong id="spectral-count">—</strong><span class="metric-note">provided in source files</span></article><article><span class="metric-label">OBSERVATORIES</span><strong>05</strong><span class="metric-note">SALT · Keck · APF · SOAR · McDonald</span></article><article><span class="metric-label">GAIA PHOTOMETRY</span><strong id="photometry-count">—</strong><span class="metric-note">G and BP−RP available</span></article></section>
       <section class="section catalog-section" id="catalog">
-        <div class="section-heading">
-          <div><div class="eyebrow">01 — SOURCE INDEX</div><h2>Find a target.</h2></div>
-          <div class="section-aside">Search by Gaia DR3 source ID or filter by stellar properties and observatory access.</div>
-        </div>
-        <div class="filter-panel">
-          <label class="search-field"><span aria-hidden="true">⌕</span><input id="query" type="search" placeholder="Search source ID…" aria-label="Search source ID"></label>
-          <label class="filter-field"><span>TEFF MIN</span><input id="teff-min" type="number" placeholder="e.g. 4500" aria-label="Minimum effective temperature in kelvin"><b>K</b></label>
-          <label class="filter-field"><span>TEFF MAX</span><input id="teff-max" type="number" placeholder="e.g. 6500" aria-label="Maximum effective temperature in kelvin"><b>K</b></label>
-          <label class="select-field"><span>OBSERVATORY</span><select id="obs-filter" aria-label="Filter by observatory"><option value="">All sites</option><option>SALT</option><option>Keck</option><option>APF</option><option>SOAR</option></select></label>
-          <button id="reset-filters" class="reset-button" type="button">Reset <span>↺</span></button>
-        </div>
-        <div class="table-meta"><span id="result-count">7 SOURCES</span><span>SELECT A ROW TO INSPECT</span></div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>GAIA DR3 SOURCE ID</th><th>RA <small>deg</small></th><th>DEC <small>deg</small></th><th>PARALLAX <small>mas</small></th><th>DISTANCE <small>pc</small></th><th>TEFF <small>K</small></th><th>BP − RP <small>mag</small></th><th>RV DATA</th></tr></thead>
-            <tbody id="catalog-body"></tbody>
-          </table>
-          <div class="empty-state" id="empty-state" hidden>No matching sources. Clear filters or import a catalog with stellar parameters.</div>
-        </div>
-        <div class="data-note"><span class="note-icon">i</span><span>The supplied source list includes positions, parallax, and distance. Temperature and Gaia photometry are not present in that file; import columns named <code>teff_gspphot</code>, <code>bp_rp</code>, and <code>phot_g_mean_mag</code> to populate those views.</span><a href="README.md">Data schema ↗</a></div>
+        <div class="section-heading"><div><div class="eyebrow">01 — SOURCE INDEX</div><h2>Find a target.</h2></div><div class="section-aside">Search by Gaia DR3 source ID or filter to sources with a positive observatory flag.</div></div>
+        <div class="filter-panel"><label class="search-field"><span aria-hidden="true">⌕</span><input id="query" type="search" placeholder="Search Gaia ID…" aria-label="Search Gaia source ID"></label><label class="select-field"><span>OBSERVATORY</span><select id="obs-filter" aria-label="Filter by observatory"><option value="">All sites</option><option>SALT</option><option>Keck</option><option>APF</option><option>SOAR</option><option>McDonald</option></select></label><button id="reset-filters" class="reset-button" type="button">Reset <span>↺</span></button></div>
+        <div class="table-meta"><span id="result-count">—</span><span>SCROLL TABLE TO VIEW ALL FIELDS</span></div>
+        <div class="table-wrap"><table><thead><tr><th>GAIA DR3 SOURCE ID</th><th>RA <small>deg</small></th><th>DEC <small>deg</small></th><th>SPECTRAL TYPE</th><th>G <small>mag</small></th><th>BP − RP <small>mag</small></th><th>SALT</th><th>KECK</th><th>APF</th><th>SOAR</th><th>MCDONALD</th><th>GOODMAN LIST</th></tr></thead><tbody id="catalog-body"></tbody></table><div class="empty-state" id="empty-state" hidden>No matching sources. Clear the filter and try again.</div></div>
+        <div class="data-note"><span class="note-icon">i</span><span>Spectral types were not included in the supplied CSV files. Observatory statuses are marked “Not assessed” where the source files provide no assessment. The Goodman column records an exposure-time list entry, not a visibility determination.</span><a href="README.md">Data schema ↗</a></div>
       </section>
-
-      <section class="section cmd-section" id="cmd">
-        <div class="section-heading">
-          <div><div class="eyebrow">02 — POPULATION VIEW</div><h2>Read the color.</h2></div>
-          <div class="section-aside">Explore the sample in Gaia color–magnitude space. Effective temperature runs hot to cool across the horizontal axis.</div>
-        </div>
-        <div class="chart-card">
-          <div class="chart-top"><div><span class="chart-title">GAIA COLOR–MAGNITUDE DIAGRAM</span><span class="chart-subtitle">Absolute magnitude M<sub>G</sub> vs. BP − RP</span></div><div class="chart-legend"><span><i class="legend-dot"></i>RV target</span><span><i class="legend-ring"></i>selected</span></div></div>
-          <div class="cmd-stage"><canvas id="cmd-canvas" aria-label="Color magnitude diagram of imported catalog sources"></canvas><div class="chart-empty" id="cmd-empty"><div class="empty-glyph">✳</div><strong>Photometry needed</strong><span>Import BP − RP and G magnitude columns to plot this sample.</span></div></div>
-          <div class="chart-foot"><span>HOTTER <b>←</b> EFFECTIVE TEMPERATURE <b>→</b> COOLER</span><span>Hover a point for source details</span></div>
-        </div>
-      </section>
-
-      <section class="section visibility-section" id="visibility">
-        <div class="section-heading">
-          <div><div class="eyebrow">03 — SKY ACCESS</div><h2>Plan your window.</h2></div>
-          <div class="section-aside">A first-pass visibility guide for December 2026–February 2027, based on sky position and the earlier seasonal comparison.</div>
-        </div>
-        <div class="visibility-card">
-          <div class="visibility-intro"><div class="mini-eyebrow">SEASONAL ACCESS</div><strong>Where can you observe?</strong><p>Green means the source passed the earlier geometric and seasonal screen for that facility.</p><span class="visibility-key"><i></i> Favorable in this window</span></div>
-          <div class="visibility-table-wrap"><table class="visibility-table"><thead><tr><th>GAIA DR3 SOURCE</th><th>SALT</th><th>KECK</th><th>APF</th><th>SOAR</th><th>DEC</th></tr></thead><tbody id="visibility-body"></tbody></table></div>
-        </div>
-        <p class="caveat"><span>!</span> Visibility is a planning estimate, not a live ephemeris or confirmation of instrument availability, weather, or scheduling. Recheck coordinates and local observing constraints before proposing observations.</p>
-      </section>
-
-      <section class="section rv-section" id="rv-example">
-        <div class="section-heading">
-          <div><div class="eyebrow">04 — EPOCH VIEWER</div><h2>A signal to inspect.</h2></div>
-          <div class="section-aside">Target 3 is a simulated RV series for model testing. It is intentionally kept separate from the Gaia source catalog.</div>
-        </div>
-        <div class="rv-card">
-          <div class="rv-toolbar"><div><span class="chart-title">TARGET 3 · SYNTHETIC GAIA-LIKE RV</span><span class="chart-subtitle">67 simulated epochs · time in TCB · velocity in km/s</span></div><span class="synthetic-pill"><i></i>SYNTHETIC DATA</span></div>
-          <div class="rv-stage"><canvas id="rv-canvas" aria-label="Synthetic radial velocity epochs for target 3"></canvas></div>
-          <div class="rv-footer"><span id="rv-span">OBSERVATION SPAN</span><a href="data/target_3_rv_gaialike.csv" download>Download epoch CSV ↓</a></div>
-        </div>
-      </section>
+      <section class="section cmd-section" id="cmd"><div class="section-heading"><div><div class="eyebrow">02 — POPULATION VIEW</div><h2>Read the color.</h2></div><div class="section-aside">Explore sources with Gaia photometry. The vertical axis shows apparent G magnitude because distances are unavailable for most rows.</div></div><div class="chart-card"><div class="chart-top"><div><span class="chart-title">GAIA COLOR–MAGNITUDE DIAGRAM</span><span class="chart-subtitle">Apparent G magnitude vs. BP − RP</span></div><div class="chart-legend"><span><i class="legend-dot"></i>Catalog source</span><span><i class="legend-ring"></i>selected</span></div></div><div class="cmd-stage"><canvas id="cmd-canvas" aria-label="Apparent Gaia magnitude versus BP minus RP for catalog sources"></canvas><div class="chart-empty" id="cmd-empty"><div class="empty-glyph">✳</div><strong>Photometry needed</strong><span>Sources with Gaia G and BP − RP are plotted here.</span></div></div><div class="chart-foot"><span>BLUE <b>←</b> BP − RP <b>→</b> RED</span><span>Hover a point for source details</span></div></div></section>
+      <section class="section visibility-section" id="visibility"><div class="section-heading"><div><div class="eyebrow">03 — SKY ACCESS</div><h2>Plan your window.</h2></div><div class="section-aside">Seasonal estimates are shown only for the seven-source comparison already in the project.</div></div><div class="visibility-card"><div class="visibility-intro"><div class="mini-eyebrow">SEASONAL ACCESS</div><strong>Where can you observe?</strong><p>Only source-backed flags are shown. “Not assessed” means the supplied lists do not establish observatory visibility.</p><span class="visibility-key"><i></i> Favorable estimate</span></div><div class="visibility-table-wrap"><table class="visibility-table"><thead><tr><th>GAIA DR3 SOURCE</th><th>SALT</th><th>KECK</th><th>APF</th><th>SOAR</th><th>MCDONALD</th></tr></thead><tbody id="visibility-body"></tbody></table></div></div><p class="caveat"><span>!</span> SALT, Keck, APF, and SOAR values are first-pass geometric/seasonal estimates for Dec 2026–Feb 2027, not live ephemerides or instrument, weather, or schedule confirmation. McDonald reflects the supplied source flag.</p></section>
       <footer><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>STELLAR RV <b>ATLAS</b></span></a><span>Built for open, reviewable stellar RV data.</span><a href="README.md">Contribute data ↗</a></footer>
     </main>
-  </div>
-  <div id="tooltip" class="tooltip" role="status" aria-live="polite"></div>
-</body>
-</html>
+  </div><div id="tooltip" class="tooltip" role="status" aria-live="polite"></div>
+</body></html>
