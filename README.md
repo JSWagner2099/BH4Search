@@ -1,4 +1,4 @@
-# Stellar RV Atlas
+# DR4 Stellar Organization
 
 A static, searchable Gaia stellar radial-velocity catalog for GitHub Pages. It includes Gaia parameters, estimated temperature-based spectral types, a dereddened CMD for the parameterized subset, and a geometric observability screen for six RV facilities.
 
@@ -30,11 +30,3 @@ The observability columns indicate geometric reach only, without a requested obs
 - Gaia DR3 GSP-Phot parameters and interpretation: [Gaia DR3 documentation](https://gea.esac.esa.int/archive/documentation/GDR3/Data_analysis/chap_cu8par/sec_cu8par_apsis/ssec_cu8par_apsis_gspphot.html).
 - Dwarf temperature/color sequence: [Mamajek's table](https://www.pas.rochester.edu/~emamajek/EEM_dwarf_UBVIJHK_colors_Teff.txt); underlying main-sequence sequence discussed in [Pecaut & Mamajek (2013)](https://doi.org/10.1088/0067-0049/208/1/9).
 - Facility positions: [Keck/Maunakea](https://about.ifa.hawaii.edu/facility/mauna-kea-observatories/), [APF/Mt. Hamilton](https://www.ucolick.org/~sla/mtham/gpos.html), [ESO Paranal](https://www.eso.org/sci/facilities/paranal/astroclimate/site.html), [SOAR/Cerro Pachón](https://pds.nasa.gov/ds-view/pds/viewContext.jsp?identifier=urn%3Anasa%3Apds%3Acontext%3Atelescope%3Actio-cerro_tololo.soar_4m1&version=1.3), and [McDonald HJST](https://mcdonald.utexas.edu/research-facilities/HJST). SALT's fixed-angle sky access is described in [Kwiatkowski et al.](https://doi.org/10.1051/0004-6361/200913152).
-
-## Publish with GitHub Pages
-
-The included GitHub Actions workflow deploys the static site on pushes to the default branch. The app is plain HTML, CSS, and JavaScript, with no build step or backend.
-
-## Local preview
-
-Run `python3 -m http.server 8000` from the project directory and open `http://localhost:8000`.
