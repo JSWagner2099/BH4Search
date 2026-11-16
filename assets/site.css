@@ -4,3 +4,14 @@
 .selected{background:rgba(211,237,138,.07)}
 @media(max-width:900px){.shell{padding:0 30px}.topbar nav{gap:17px}.hero{min-height:405px}.hero-copy{width:70%}.hero-art{width:50%;opacity:.7}.filter-panel{flex-wrap:wrap}.search-field{flex-basis:40%}.filter-field,.select-field{flex:1}.reset-button{flex:0 0 50px}.visibility-card{grid-template-columns:190px 1fr}.visibility-intro{padding:18px}}
 @media(max-width:620px){.shell{padding:0 18px}.topbar{height:62px}.topbar nav{display:none}.github-link{margin-left:auto}.hero{min-height:510px;padding:60px 0 56px;align-items:flex-start}.hero-copy{width:100%}.hero h1{font-size:70px;margin-top:24px}.hero-lede{max-width:330px;font-size:13px}.hero-art{width:100%;height:240px;top:auto;bottom:25px;opacity:.45}.hero-actions{flex-wrap:wrap}.hero-foot{bottom:9px}.metrics{grid-template-columns:1fr 1fr;row-gap:22px;padding-top:20px}.metrics article:nth-child(3){padding-left:0;border-left:0}.metrics strong{font-size:26px}.section{padding-top:64px}.section-heading{display:block;margin-bottom:20px}.section-aside{margin-top:12px}.section-heading h2{font-size:37px}.filter-panel{padding:9px;gap:7px}.search-field{flex-basis:100%;height:44px}.filter-field,.select-field{flex-basis:calc(50% - 7px);height:45px}.reset-button{height:38px}.data-note{align-items:flex-start}.data-note a{display:none}.chart-top,.rv-toolbar{padding:16px}.cmd-stage{height:280px;margin:0 8px}.chart-legend{display:none}.chart-foot{font-size:7px}.visibility-card{grid-template-columns:1fr}.visibility-intro{border-right:0;border-bottom:1px solid var(--line);padding:17px}.visibility-intro strong{margin:9px 0 4px}.visibility-intro p{margin-bottom:12px}.visibility-table{min-width:980px}.visibility-table-wrap{padding:0 8px}.rv-stage{height:250px;padding:0 7px}.rv-footer{padding:12px;font-size:8px}footer{gap:12px;flex-wrap:wrap}footer>span{order:3;flex-basis:100%}}
+
+/* Portrait, reference-style Gaia CMD */
+.cmd-section .chart-card{max-width:780px;margin:0 auto;background:#fff;border-color:#cfd7e2;color:#263a4d}
+.cmd-section .chart-top{background:#fff;border-bottom:1px solid #d7deea;padding:18px 22px}
+.cmd-section .chart-title{color:#24374a}
+.cmd-section .chart-subtitle{color:#657487}
+.cmd-section .chart-legend{color:#526579}
+.cmd-section .cmd-stage{height:clamp(680px,72vw,900px);margin:0;padding:0 8px;background:#fff}
+.cmd-section .chart-foot{background:#fff;color:#53677b;border-top:1px solid #d7deea;font-size:9px;letter-spacing:.02em}
+.cmd-section .chart-foot b{color:#53677b}
+@media(max-width:620px){.cmd-section .cmd-stage{height:690px;margin:0;padding:0 2px}.cmd-section .chart-foot{display:block;line-height:1.8}.cmd-section .chart-foot span{display:block}}

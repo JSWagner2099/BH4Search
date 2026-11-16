@@ -30,16 +30,43 @@ function renderVisibility(){
 }
 function setupCanvas(canvas){const r=canvas.getBoundingClientRect(),dpr=window.devicePixelRatio||1;canvas.width=Math.max(1,Math.round(r.width*dpr));canvas.height=Math.max(1,Math.round(r.height*dpr));const ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);return{ctx,w:r.width,h:r.height};}
 function renderCMD(){
- const canvas=$('cmd-canvas');if(!canvas)return;const{ctx,w,h}=setupCanvas(canvas),pad={l:54,r:20,t:18,b:38};ctx.clearRect(0,0,w,h);ctx.font='9px "DM Mono", monospace';ctx.lineWidth=1;
- const pts=sources.filter(s=>s['BP-RP intrinsic estimate (mag)']!==''&&s['M_G dereddened estimate (mag)']!==''&&Number.isFinite(Number(s['BP-RP intrinsic estimate (mag)']))&&Number.isFinite(Number(s['M_G dereddened estimate (mag)']))).map(s=>({...s,xval:Number(s['BP-RP intrinsic estimate (mag)']),yval:Number(s['M_G dereddened estimate (mag)'])}));
- const iw=w-pad.l-pad.r,ih=h-pad.t-pad.b,xmin=pts.length?Math.min(...pts.map(p=>p.xval)):0,xmax=pts.length?Math.max(...pts.map(p=>p.xval)):1,ymin=pts.length?Math.min(...pts.map(p=>p.yval)):0,ymax=pts.length?Math.max(...pts.map(p=>p.yval)):1;
- ctx.strokeStyle='#2a3946';ctx.fillStyle='#7c8c98';for(let i=0;i<=4;i++){const x=pad.l+iw*i/4,y=pad.t+ih*i/4;ctx.beginPath();ctx.moveTo(x,pad.t);ctx.lineTo(x,pad.t+ih);ctx.stroke();ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+iw,y);ctx.stroke();if(pts.length){ctx.fillText((xmin+(xmax-xmin)*i/4).toFixed(1),x-9,h-15);ctx.fillText((ymin+(ymax-ymin)*i/4).toFixed(1),6,y+3);}}
- ctx.fillStyle='#71818c';ctx.font='8px "DM Mono", monospace';ctx.save();ctx.translate(13,h/2);ctx.rotate(-Math.PI/2);ctx.textAlign='center';ctx.fillText('DEREDDENED ABSOLUTE MAGNITUDE  M₍G₎',0,0);ctx.restore();ctx.textAlign='center';ctx.fillText('INTRINSIC BP − RP  [mag]',pad.l+iw/2,h-2);ctx.textAlign='start';$('cmd-empty').style.display=pts.length?'none':'flex';if(!pts.length)return;
- const xs=xmax-xmin||1,ys=ymax-ymin||1;canvas._points=pts.map(p=>({...p,x:pad.l+(p.xval-xmin)/xs*iw,y:pad.t+(p.yval-ymin)/ys*ih}));for(const p of canvas._points){ctx.beginPath();ctx.arc(p.x,p.y,p['Gaia ID']===selectedId?6:4,0,2*Math.PI);ctx.fillStyle=p['Gaia ID']===selectedId?'#d3ed8a':'#83d1b5';ctx.fill();if(p['Gaia ID']===selectedId){ctx.beginPath();ctx.arc(p.x,p.y,9,0,2*Math.PI);ctx.strokeStyle='#d3ed8a';ctx.stroke();}}
+ const canvas=$('cmd-canvas');if(!canvas)return;
+ const {ctx,w,h}=setupCanvas(canvas),pad={l:88,r:24,t:44,b:72};
+ const xMin=-0.6,xMax=2.5,yMin=-2.0,yMax=17.5,plotW=w-pad.l-pad.r,plotH=h-pad.t-pad.b;
+ ctx.clearRect(0,0,w,h);ctx.fillStyle='#fbfcff';ctx.fillRect(pad.l,pad.t,plotW,plotH);
+ const xPos=v=>pad.l+(v-xMin)/(xMax-xMin)*plotW;
+ const yPos=v=>pad.t+(v-yMin)/(yMax-yMin)*plotH;
+ const bands=[
+  {name:'O',from:-0.6,to:-0.35,fill:'#d5ddfb'},
+  {name:'B',from:-0.35,to:-0.1,fill:'#d9e1fc'},
+  {name:'A',from:-0.1,to:0.15,fill:'#e3e9fd'},
+  {name:'F',from:0.15,to:0.45,fill:'#eef1fc'},
+  {name:'G',from:0.45,to:1.0,fill:'#f5f5fb'},
+  {name:'K',from:1.0,to:1.5,fill:'#f9eee8'},
+  {name:'M',from:1.5,to:2.5,fill:'#ffeadb'}
+ ];
+ for(const band of bands){const left=xPos(band.from),right=xPos(band.to);ctx.fillStyle=band.fill;ctx.fillRect(left,pad.t,right-left,plotH);ctx.fillStyle='#24374a';ctx.font='600 15px Arial, sans-serif';ctx.textAlign='center';ctx.fillText(band.name,(left+right)/2,pad.t-17);}
+ const xTicks=[-0.6,-0.1,0.4,1.0,1.5,2.0,2.5],yTicks=[-2.0,1.3,4.5,7.8,11.0,14.3,17.5];
+ ctx.lineWidth=1;ctx.strokeStyle='#d7deea';ctx.fillStyle='#304459';ctx.font='13px Arial, sans-serif';
+ for(const v of xTicks){const x=xPos(v);ctx.beginPath();ctx.moveTo(x,pad.t);ctx.lineTo(x,pad.t+plotH);ctx.stroke();ctx.textAlign='center';ctx.fillText(v.toFixed(1),x,pad.t+plotH+23);}
+ for(const v of yTicks){const y=yPos(v);ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+plotW,y);ctx.stroke();ctx.textAlign='right';ctx.fillText(v.toFixed(1),pad.l-13,y+4);}
+ ctx.strokeStyle='#9aa8b8';ctx.lineWidth=1.2;ctx.strokeRect(pad.l,pad.t,plotW,plotH);
+ ctx.fillStyle='#24374a';ctx.font='15px Arial, sans-serif';ctx.textAlign='center';ctx.fillText('BP − RP − E(BP−RP) [mag]',pad.l+plotW/2,h-13);
+ ctx.save();ctx.translate(23,pad.t+plotH/2);ctx.rotate(-Math.PI/2);ctx.textAlign='center';ctx.fillText('M_G,0 [mag]  ·  extinction-corrected absolute G',0,0);ctx.restore();
+ const pts=sources.filter(s=>s['BP-RP observed (mag)']!==''&&s['BP-RP intrinsic estimate (mag)']!==''&&s['M_G dereddened estimate (mag)']!==''&&Number.isFinite(Number(s['BP-RP observed (mag)']))&&Number.isFinite(Number(s['BP-RP intrinsic estimate (mag)']))&&Number.isFinite(Number(s['M_G dereddened estimate (mag)']))).map(s=>({...s,xval:Number(s['BP-RP observed (mag)']),xIntrinsic:Number(s['BP-RP intrinsic estimate (mag)']),yval:Number(s['M_G dereddened estimate (mag)'])}));
+ $('cmd-empty').style.display=pts.length?'none':'flex';
+ canvas._points=pts.map(p=>({...p,x:xPos(p.xval),y:yPos(p.yval)}));
+ for(const p of canvas._points){
+  const size=p['Gaia ID']===selectedId?14:12;
+  ctx.fillStyle=p['Gaia ID']===selectedId?'#9ab8c8':'#91b2c3';ctx.strokeStyle='#516b7b';ctx.lineWidth=1;
+  ctx.fillRect(p.x-size/2,p.y-size/2,size,size);ctx.strokeRect(p.x-size/2,p.y-size/2,size,size);
+  ctx.strokeStyle='#213642';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(p.x-3.5,p.y-3.5);ctx.lineTo(p.x+3.5,p.y+3.5);ctx.moveTo(p.x+3.5,p.y-3.5);ctx.lineTo(p.x-3.5,p.y+3.5);ctx.stroke();
+  if(p['Gaia ID']===selectedId){ctx.beginPath();ctx.arc(p.x,p.y,11,0,Math.PI*2);ctx.strokeStyle='#2b554c';ctx.lineWidth=1.4;ctx.stroke();}
+ }
 }
 function loadCatalog(){fetch('data/catalog.csv').then(r=>{if(!r.ok)throw Error('catalog unavailable');return r.text();}).then(t=>{sources=parseCSV(t);renderTable();renderVisibility();}).catch(()=>{$('result-count').textContent='CATALOG UNAVAILABLE';$('empty-state').hidden=false;});}
 for(const id of ['query','teff-min','teff-max','obs-filter'])$(id).addEventListener('input',renderTable);$('obs-filter').addEventListener('change',renderTable);
 $('reset-filters').addEventListener('click',()=>{$('query').value='';$('teff-min').value='';$('teff-max').value='';$('obs-filter').value='';renderTable();});
 $('catalog-body').addEventListener('click',e=>{const row=e.target.closest('tr[data-id]');if(!row||e.target.closest('a'))return;selectedId=row.dataset.id;renderTable();});
-$('cmd-canvas').addEventListener('mousemove',e=>{const c=e.currentTarget,r=c.getBoundingClientRect(),p=(c._points||[]).find(z=>Math.hypot(z.x-(e.clientX-r.left),z.y-(e.clientY-r.top))<10),tip=$('tooltip');if(!p){tip.classList.remove('visible');return;}tip.innerHTML=`<strong>${p['Gaia ID']}</strong><br>${p['Spectral type estimate']} · BP−RP₀ ${num(p.xval,3)} mag · M<sub>G</sub> ${num(p.yval,2)} mag`;tip.style.left=`${e.clientX+13}px`;tip.style.top=`${e.clientY+13}px`;tip.classList.add('visible');});
+$('cmd-canvas').addEventListener('mousemove',e=>{const c=e.currentTarget,r=c.getBoundingClientRect(),p=(c._points||[]).find(z=>Math.hypot(z.x-(e.clientX-r.left),z.y-(e.clientY-r.top))<10),tip=$('tooltip');if(!p){tip.classList.remove('visible');return;}tip.innerHTML=`<strong>${p['Gaia ID']}</strong><br>${p['Spectral type estimate']} · observed BP−RP ${num(p.xval,3)} mag · corrected BP−RP ${num(p.xIntrinsic,3)} mag · M<sub>G,0</sub> ${num(p.yval,2)} mag`;tip.style.left=`${e.clientX+13}px`;tip.style.top=`${e.clientY+13}px`;tip.classList.add('visible');});
 $('cmd-canvas').addEventListener('mouseleave',()=>$('tooltip').classList.remove('visible'));window.addEventListener('resize',renderCMD);loadCatalog();
