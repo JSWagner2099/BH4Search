@@ -8,8 +8,8 @@ function parseCSV(text){
   const headers=split(lines[0]).map(h=>h.trim());return lines.slice(1).filter(Boolean).map(line=>Object.fromEntries(split(line).map((v,i)=>[headers[i],v.trim()])));
 }
 const facilityField={HIRES:'HIRES observability',APF:'APF observability',ESPRESSO:'ESPRESSO observability',SOAR:'SOAR observability',HJST:"McDonald's HJST observability",SALT:'SALT observability'};
-const isPotential=v=>String(v||'').toLowerCase()==='potentially observable';
-function statusHTML(v){const x=String(v||'Not assessed');return isPotential(x)?`<span class="check" title="${x}">Potential</span>`:`<span class="dash" title="${x}">Outside range</span>`;}
+const isPotential=v=>{const x=String(v||'').toLowerCase();return x.startsWith('available ')||x==='potentially observable';};
+function statusHTML(v){const x=String(v||'Not assessed');if(x.startsWith('Available ')){const dates=x.slice('Available '.length);return `<span class="check" title="Potential nighttime visibility during astronomical darkness (Sun below −18°, target altitude at least 30°): ${x}" aria-label="${x}">${dates}</span>`;}if(x==='Outside declination range')return `<span class="dash" title="${x}" aria-label="${x}">Dec limit</span>`;if(x==='Out of season')return `<span class="dash" title="${x}" aria-label="${x}">Out of season</span>`;return `<span class="dash" title="${x}">${x}</span>`;}
 function renderTable(){
   const q=$('query').value.trim().toLowerCase(),minRaw=$('teff-min').value,maxRaw=$('teff-max').value,obs=$('obs-filter').value;
   const min=Number(minRaw),max=Number(maxRaw);
