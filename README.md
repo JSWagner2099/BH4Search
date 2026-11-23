@@ -12,18 +12,24 @@ The CMD is restricted to sources with distance and extinction parameters. It cal
 
 ## Observatory flags
 
-The observability columns indicate geometric reach only, without a requested observing date:
+The observability columns estimate seasonal nighttime windows from **November 23, 2026 through February 28, 2027**. For each date and facility, the screen checks whether the target can reach at least 30° altitude while the Sun is at least 18° below the horizon (astronomical darkness). SALT uses its fixed-zenith-angle access band, approximately −75° to +10°, in addition to the nighttime screen. Dates are sampled daily; the Sun position and facility latitudes are approximate, so the start and end dates are planning estimates.
 
-| Facility | Declination screen |
+| Display | Meaning |
 | --- | --- |
-| HIRES / Keck | culmination altitude ≥30° at Maunakea (approximately −40° to +80°) |
-| APF / Lick | culmination altitude ≥30° at Mt. Hamilton (approximately −23° to +90°) |
-| ESPRESSO / Paranal | culmination altitude ≥30° at Paranal (approximately −85° to +35°) |
-| SOAR | culmination altitude ≥30° at Cerro Pachón (approximately −90° to +30°) |
-| HJST / McDonald | culmination altitude ≥30° at McDonald Observatory (approximately −29° to +90°) |
-| SALT | fixed-zenith-angle access band (approximately −75° to +10°) |
+| Date range, such as `Dec 4–Jan 21` | At least one nighttime interval passed the geometric screen on each date within that range. Multiple ranges are separated by commas. |
+| `Out of season` | No date in this interval passed both the nighttime and altitude screen. |
+| `Dec limit` | The source falls outside the facility's declination-access range. |
 
-`Potentially observable` means the declination falls inside that screen; `Outside declination range` means it does not. Flags do not establish visibility on a particular night, brightness suitability, exposure feasibility, instrument availability, weather, or scheduling.
+A date range is not a reservation or guarantee of observability. The screen does not include weather, brightness/exposure constraints, instrument availability, airmass limits, or scheduling.
+
+| Facility | Site | Declination screen |
+| --- | --- | --- |
+| HIRES / Keck | Maunakea | culmination altitude ≥30° (approximately −40° to +80°) |
+| APF / Lick | Mt. Hamilton | culmination altitude ≥30° (approximately −23° to +90°) |
+| ESPRESSO / Paranal | Paranal | culmination altitude ≥30° (approximately −85° to +35°) |
+| SOAR | Cerro Pachón | culmination altitude ≥30° (approximately −90° to +30°) |
+| HJST / McDonald | McDonald Observatory | culmination altitude ≥30° (approximately −29° to +90°) |
+| SALT | Sutherland | fixed-zenith-angle access band (approximately −75° to +10°) |
 
 ## References and facility sources
 
